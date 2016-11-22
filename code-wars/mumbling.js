@@ -11,14 +11,12 @@ The parameter of accum is a string which includes only letters from a..z and A..
 
 */
 
-function accum(s) {
-  var output = '';
+function accum(str) {
+  var letters = str.split('');
+  var result = [];
 
-  for (var i = 0, len = s.length; i < len; i++) {
-    var first  = s[i].toUpperCase();
-    var second = s[i].toLowerCase().repeat(i);
-    output = (i < len - 1) ? output + first + second + '-' : output + first + second;
-  };
-
-  return output;
-};
+  for (var i = 0, len = letters.length; i < len; i++) {
+    result.push(letters[i].toUpperCase() + Array(i + 1).join(letters[i].toLowerCase()));
+  }
+  return result.join('-');
+}
