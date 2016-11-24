@@ -20,3 +20,9 @@ function findOdd(arr) {
 
 input = [ 20, 1, -1, 2, -2, 3, 3, 5, 5, 1, 2, 4, 20, 4, -1, -2, 5 ]
 findOdd(input);
+
+// other solution
+
+const findOdd = (xs) => xs.reduce((a, b) => a ^ b);
+// ^ XOR Bitwise operator
+// Will find two equal bits and cancel them out.
