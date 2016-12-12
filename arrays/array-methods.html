@@ -1,0 +1,66 @@
+<body>
+  <div class="book">
+    <h3 data-title="The Lord of the Rings">The Lord of the Rings by J. R. R. Tolkein</h3>
+    <p>Thousands of years before the events of the novel, the Dark Lord Sauron had forged the One Ring to rule the other Rings of Power and corrupt those who wore them: the leaders of Men, Elves and Dwarves.</p>
+    <a href="https://en.wikipedia.org/wiki/The_Lord_of_the_Rings">Wikipedia</a>
+  </div>
+
+  <div class="book">
+    <h3 data-title="House of Leaves">House of Leaves by Mark Z. Danielewski</h3>
+    <p>House of Leaves begins with a first-person narrative by Johnny Truant, a Los Angeles tattoo parlor employee and professed unreliable narrator. Truant is searching for a new apartment when his friend Lude tells him about the apartment of the recently deceased Zampanò, a blind, elderly man who lived in Lude's apartment building.</p>
+    <a href="https://en.wikipedia.org/wiki/House_of_Leaves">Wikipedia</a>
+  </div>
+
+  <div class="book">
+    <h3 data-title="Harry Potter and the Sorcerer's Stone">Harry Potter and the Sorcerer's Stone by J. K. Rowling</h3>
+    <p>The most evil and powerful dark wizard in history, Lord Voldemort, murdered married couple James and Lily Potter but mysteriously disappeared after failing to kill their infant son, Harry.</p>
+    <a href="https://en.wikipedia.org/wiki/Harry_Potter_and_the_Philosopher's_Stone">Wikipedia</a>
+  </div>
+
+  <script type="text/javascript">
+    'use strict';
+
+    const inventors = [
+      { first: 'Albert', last: 'Einstein', year: 1879, passed: 1955 },
+      { first: 'Isaac', last: 'Newton', year: 1643, passed: 1727 },
+      { first: 'Galileo', last: 'Galilei', year: 1564, passed: 1642 },
+      { first: 'Marie', last: 'Curie', year: 1867, passed: 1934 },
+      { first: 'Johannes', last: 'Kepler', year: 1571, passed: 1630 },
+      { first: 'Nicolaus', last: 'Copernicus', year: 1473, passed: 1543 },
+      { first: 'Max', last: 'Planck', year: 1858, passed: 1947 },
+    ];
+
+    const flavours = ['Chocolate Chip', 'Kulfi', 'Caramel Praline', 'Chocolate', 'Burnt Caramel', 'Pistachio', 'Rose', 'Sweet Coconut', 'Lemon Cookie', 'Toffeeness', 'Toasted Almond', 'Black Raspberry Crunch', 'Chocolate Brownies', 'Pistachio Almond', 'Strawberry', 'Lavender Honey', 'Lychee', 'Peach', 'Black Walnut', 'Birthday Cake', 'Mexican Chocolate', 'Mocha Almond Fudge', 'Raspberry'
+    ];
+
+    const people = ['Beck, Glenn', 'Becker, Carl', 'Beckett, Samuel', 'Beddoes, Mick', 'Beecher, Henry', 'Beethoven, Ludwig', 'Begin, Menachem', 'Belloc, Hilaire', 'Bellow, Saul', 'Benchley, Robert', 'Benenson, Peter', 'Ben-Gurion, David', 'Benjamin, Walter', 'Benn, Tony', 'Bennington, Chester', 'Benson, Leana', 'Bent, Silas', 'Bentsen, Lloyd', 'Berger, Ric', 'Bergman, Ingmar', 'Berio, Luciano', 'Berle, Milton', 'Berlin, Irving', 'Berne, Eric', 'Bernhard, Sandra', 'Berra, Yogi', 'Berry, Halle', 'Berry, Wendell', 'Bethea, Erin', 'Bevan, Aneurin', 'Bevel, Ken', 'Biden, Joseph', 'Bierce, Ambrose', 'Biko, Steve', 'Billings, Josh', 'Biondo, Frank', 'Birrell, Augustine', 'Black Elk', 'Blair, Robert', 'Blair, Tony', 'Blake, William'
+    ];
+
+    // Return an array of inventors with last names A - M
+    // const val = new RegExp('^[A-Ma-m]+$');
+
+    // const alphaAM = inventors
+    //                   .filter(inventor => inventor.last[0] === val);
+    //                   console.log(alphaAM);
+
+    // .sort((a, b) => a.last > b.last ? 1 : -1);
+
+    // return value of all years added together
+    const test = inventors.sort(function(a, b) {
+      return (a.first > b.first) ? 1 : -1; // if compareFunction returns less than zero, b is sorted higher than a
+    });
+    console.log(test);
+
+    // create an array of <a> tags from each book
+    const bookLinks = Array.from(document.querySelectorAll('.book a'));
+    const wikis = bookLinks.map(link => link.href);
+    console.log(wikis);
+
+    // find the title of each book
+    const bookHeaders = Array.from(document.querySelectorAll('.book h3'));
+    const titles = bookHeaders.map(title => title.dataset.title);
+    console.log(titles);
+
+
+  </script>
+</body>
