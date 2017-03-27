@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Filter, Map, Reduce, Some, Any, </title>
+</head>
+<body>
+
+<script type="text/javascript">
+  function fibonacci(iterations, filter) {
+    var arr = [0, 1];
+    var   len = (iterations - 2) || 8;
+    var   f   = filter;
+
+    // 3.  parameter for even/odd
+
+    for (let i = 0; i < len; i++) {
+      arr.push(arr[i] + arr[i + 1]);
+    };
+
+    if (filter === 'even') {
+      arr.filter(a => {
+        return a % 2 === 0;
+      });
+    };
+
+    // console.log(arr);
+  };
+
+  fibonacci(15, 'even');
+
+</script>
+
+</body>
+</html>
