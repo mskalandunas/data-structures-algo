@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title></title>
+</head>
+<body>
+
+  <script type="text/javascript">
+    'use strict';
+
+    function palindrome(input) {
+      const len      = input.length;
+      let palindrome = true;
+
+      for (let i = 0; i < len; i++) {
+        if (input[i] !== input[len - (1 + i)]) {
+          palindrome = false;
+        };
+      };
+
+      console.log(palindrome);
+    };
+
+    palindrome('racecar');
+    palindrome('helm');
+    palindrome('1423345');
+    palindrome('11211');
+    palindrome('  -  ');
+
+  </script>
+
+</body>
+</html>
