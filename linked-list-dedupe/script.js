@@ -33,6 +33,10 @@ class DoublyLinkedList {
         if (node === this.tail) {
             this.tail = node.previous;
         }
+
+        if (node === this.head) {
+            this.head = node.next;
+        }
     }
 
     setNewNodeProps(node, tail) {
@@ -55,19 +59,14 @@ const createUniqueIdentifier = () => +(Math.random() * 100).toString().replace('
 const dedupeList = list => {
     const values = new Set([]);
     let currentNode = list.head;
-    let nextIsNotNull = true;
 
-    while(nextIsNotNull) {
+    while(currentNode) {
         if (!values.has(currentNode.value)) {
             values.add(currentNode.value);
         }
 
         else {
             list.removeNode(currentNode);
-        }
-
-        if (currentNode.next === null) {
-            nextIsNotNull = false;
         }
 
         currentNode = currentNode.next;
